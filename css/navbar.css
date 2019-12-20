@@ -1,0 +1,31 @@
+body {
+	padding: 5px;
+}
+
+.navbar {
+  margin-bottom: 30px;
+}
+
+.container {
+	max-width: 950px;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-xs {
+  font-size: 9px;
+  position: relative;
+  bottom: 0.6em;
+}
+p {
+  text-align: justify;  
+}
+
+img{
+  margin-right: 10px;
+}
