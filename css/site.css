@@ -1,0 +1,629 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+/* ===== Base ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== Header (matches your nav.html) ===== */
+.header {
+  background: #111;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+/* nav.html uses: .container.nav-wrap */
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+/* nav.html uses: .brand */
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* nav.html uses: .nav */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* nav links */
+.nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+}
+
+/* hover + active (data-nav is used by your JS) */
+.nav a:hover,
+.nav a.active {
+  color: #fff;
+  border-bottom: 2px solid #00bcd4;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 4rem 0;
+  background: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+}
+
+.cta-buttons {
+  margin-top: 1.5rem;
+}
+
+.cta-buttons a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: #00bcd4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.cta-buttons a:hover {
+  background: #0097a7;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 2rem 0 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ccc;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ===== Cards / Stacks (used in Teaching page) ===== */
+.stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+/* ===== Volunteer badge (default) ===== */
+.badge-muted {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.15);
+  color: #334155;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+/* ===========================================================
+   CERT CARDS (GLOBAL)
+   Works for Plans + Volunteer (and any page that uses .cert-*)
+   Does NOT affect nav/header/footer because selectors are .cert-*
+=========================================================== */
+
+.cert-stack{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 12px;
+}
+
+/* card */
+.cert-card{
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* header strip */
+.cert-card .cert-header{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #f3f3f3;
+  border-bottom: 1px solid #dedede;
+}
+
+/* badge wrap */
+.cert-card .cert-badge-wrap{
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* optional empty placeholder */
+.cert-card .cert-badge-empty{
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+/* badge image never huge */
+.cert-card img.cert-badge{
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* title */
+.cert-title-wrap{ min-width: 0; }
+
+.cert-title{
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #222;
+}
+
+/* body */
+.cert-body{
+  padding: 18px 18px 16px;
+}
+
+.cert-body p{
+  margin: 0 0 14px 0;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #222;
+}
+
+/* exam details (one line) */
+.cert-details{
+  display: block;         /* forces new line */
+  margin-top: 2px;
+  margin-bottom: 10px;    /* separates from funding */
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.cert-details:hover{ text-decoration: underline; }
+
+/* funding pill */
+.cert-funding{
+  display: inline-block;
+  margin-top: 0; /* already has spacing from cert-details */
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.15);
+  color: #334155;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+/* =========================
+   Sticky header + Mobile nav
+   ========================= */
+
+/* sticky header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #111;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+/* nav layout */
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+/* brand */
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* nav links (desktop default) */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 4px; /* espaço pro underline */
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #fff;
+  border-bottom-color: #00bcd4;
+}
+
+
+/* Make header stick to top on scroll */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111;
+}
+
+/* optional: subtle shadow when scrolling */
+.header{
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Ensure header content aligns well */
+.nav-wrap{
+  position: relative;
+}
+
+/* Desktop nav defaults (keep your current look) */
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Mobile toggle button (hidden on desktop) */
+.nav-toggle {
+  display: none; /* desktop hidden */
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(0, 188, 212, 0.8);
+  outline-offset: 2px;
+}
+
+.nav-toggle-bars {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle-bar {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 999px;
+  display: block;
+}
+
+/* Mobile layout */
+@media (max-width: 760px) {
+  .nav-wrap {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex; /* mobile shows */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* turn nav into dropdown panel */
+  .nav {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: min(320px, calc(100vw - 32px));
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+
+    display: none;          /* hidden by default */
+    flex-direction: column; /* vertical list */
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* opened state (your JS toggles .is-open) */
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border-bottom: none; /* underline not ideal inside dropdown */
+  }
+
+  .nav a:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* active item in dropdown: keep the "blue" cue */
+  .nav a.active {
+    background: rgba(0, 188, 212, 0.18);
+    color: #fff;
+  }
+}
+
+/* =========================
+   FOOTER FIX (not cutting on mobile)
+   - more black area (padding)
+   - safe-area support (iOS)
+   - better stacking on small screens
+   ========================= */
+
+.footer {
+  background: #111;
+  color: #ccc;
+
+  /* mais "área preta" com UX boa */
+  padding: 28px 0 calc(22px + env(safe-area-inset-bottom));
+
+  /* evita parecer "apertado" quando quebra linha */
+  line-height: 1.6;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ccc;
+  margin-right: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #888;
+
+  /* dá “respiro” extra no final */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 760px) {
+  .footer {
+    padding: 32px 0 calc(26px + env(safe-area-inset-bottom));
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-links a {
+    margin-right: 12px;
+  }
+}
+
+
+/* =========================
+   CERT CARD TITLE TWEAK
+   - smaller font
+   - different color
+   ========================= */
+
+.cert-title {
+  font-size: 1.25rem;     
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f3d5e;
+}
+
+/* opcional: em telas bem pequenas, reduz mais um pouco */
+@media (max-width: 480px) {
+  .cert-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   HERO SIDE LAYOUT
+   ========================= */
+
+.hero {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.hero-photo img {
+  width: 220px;          /* menor */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 650px;
+}
+
+.hero-highlight {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f3d5e;
+  margin-bottom: 14px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-photo img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* =========================
+   SOCIAL LINKS (Homepage)
+   ========================= */
+
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  gap: 58px;                 
+}
+
+.social-links a {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+}
